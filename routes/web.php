@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\AdminProductController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
@@ -47,4 +48,9 @@ Route::middleware('auth')->group(function () {
             return view('admin.users');
         })->name('admin.users');
     });
+});
+
+// Route Admin Product
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', AdminProductController::class);
 });
