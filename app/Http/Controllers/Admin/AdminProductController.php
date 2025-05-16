@@ -9,9 +9,19 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->get();
+        $query = Product::query();
+
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $products = $query->paginate(10);
+
+        if ($request->ajax()) {
+            return view('admin.products.partials.product-list', compact('products'))->render();
+        }
         return view('admin.products.index', compact('products'));
     }
 

@@ -5,17 +5,17 @@
       <div class="bg-white overflow-hidden">
         <div class="p-6 text-gray-900">
           <div class="flex justify-between items-center">
-            <h2 class="text-xl font-bold mb-6">Daftar Produk</h2>
+            <h2 class="text-xl font-bold mb-6">Daftar Users</h2>
           </div>
           <div class="my-6">
             <div class="flex justify-between items-center">
-              {{-- Fitur Cari Product --}}
-              <input type="text" id="search" placeholder="Cari produk..." class="border border-primary focus:border-primary px-4 py-2 w-64 mb-4">
-              {{-- End Fitur Cari Product --}}
-              <a href="{{ route('admin.products.create') }}" class="bg-primary text-white hover:bg-primary/80 transition ease-in-out duration-500 px-4 py-2">Tambah Produk</a>
+              {{-- Fitur Cari Users --}}
+              <input type="text" id="search" placeholder="Cari user..." class="border border-primary focus:border-primary px-4 py-2 w-64 mb-4">
+              {{-- End Fitur Cari Users --}}
+              <a href="{{ route('admin.users.create') }}" class="bg-primary text-white hover:bg-primary/80 transition ease-in-out duration-500 px-4 py-2">Tambah User</a>
             </div>
             <div id="product-list">
-              @include('admin.products.partials.product-list', ['products' => $products])
+              @include('admin.users.partials.users-list', ['users' => $users])
             </div>
           </div>
         </div>

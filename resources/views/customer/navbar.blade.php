@@ -26,7 +26,7 @@
     x-init="initScrollObserver()">
     <header 
       class="fixed inset-x-0 top-0 z-50 transition-all duration-300 py-12" 
-      :class="{ 'bg-primary shadow-lg py-0': scroll > 10, 'bg-transparent': scroll <= 10 }"
+      :class="{ 'bg-primary shadow-lg py-2': scroll > 10, 'bg-transparent': scroll <= 10 }"
       x-data="{ scroll: 0 }"
       x-init="window.addEventListener('scroll', () => scroll = window.scrollY)">
       <nav
